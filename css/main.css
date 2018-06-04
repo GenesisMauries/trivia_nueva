@@ -8,10 +8,16 @@ header{ /*Estilo del header*/
 }
 
 h1{
-    
+
 }
 hr{
     border-style: double;
     border-bottom-color: fuchsia;
 
 }
+
+.textoDeBienvenida { display: inline-block; }
+
+
+#respuestas, form, #playNow { display: none; }
+#verCorrectas { display: inline-table; }

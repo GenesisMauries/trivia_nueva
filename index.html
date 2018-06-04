@@ -9,69 +9,78 @@
 </head>
 <body>
     <header>
-        <h1>¿Tú sabes que comen?</h1><!--Empiezo por el titulo que se vera en la pantalla y el nombre en un id-->
-        <h3 id='hello'> Bienvenida </h3>
-       <div align= "left"><img src="img/koala.png" alt="koala" width="100px" height="100px"></div>
-       <div align="rigth"><img src="img/panda.png" alt="panda" width="100px" height="100px"></div>
+
+       <img src="img/koala.png" alt="koala" width="100px" height="100px" style="display:inline-block;"><!--Directamente en la imagen definimos estilo-->
+       <div class="textoDeBienvenida">
+         <h1>¿Tú sabes que comen?</h1><!--Empiezo por el titulo que se vera en la pantalla y el nombre en un id-->
+         <h3 id='hello'> Bienvenida </h3>
+        </div>
+       <img src="img/panda.png" alt="panda" width="100px" height="100px" style="display:inline-block;">
         <hr>
     </header>
     <section id="contenido">
-        <div id="pedirNombre"> <!--Creacion del div para segmentar la primera parte de la trivia-->
-            Ingresa tu nombre: <input type="text" id="nombre" placeholder= "ingresa tu nombre"> 
-            <input type="submit" name="pedirnombre" onclick = "putName()"><!--Agregando detalles de input-->
-          </div>
-        <div id="play"> <!--Creando el segundo segmento con descicion por botones-->
-            <h2>¿Quieres jugar?</h2>
-            <input type="button" value="Si"onclick="claro()">
-            <input type="submit" value="No" onclick="no()">
-        </div>
-       <!--<form id="pregunta1">
-            <p>¿Qué comen los koalas?</p>
-            </label><input type="radio" name="option" id="eucalipto"><label>Eucalipto</label><br><!--br indica salto de linea-->
-           <!-- <input type="radio" name="option" id="manzanilla"><label>Manzanilla</label><br>
-            <input type="radio" name="option" id="sabila"><label>Sabila</label><br><br>
-            <input type="submit" value="Next" onclick="continue()"><!--Utilizo boton radio para seleccion de respuesta-->
-       <!-- </form> NO PUDE AGREGARLO EN LA PAG-->
-        <form id="pregunta2">
-            <p>¿Qué comen los pandas?</p>
-            <ul>
-                <li>1.-Caoba</li><!--Lista de opciones para respuesta-->
-                <li>2.-Bambú</li>
-                <li>3.-Cedro</li>
-            </ul>
-            Respuesta: <input id="respuesta2" type="number" min="1" max="3" required="required" autofocus= "autofocus"><!--Lugar/caja para introducir el número seleccionado-->
-            <input type="submit" onclick="segundaPregunta ()" value="Enviar">
-        </form>
-        <form id="pregunta3">
-                <p>¿Qué comen los osos grizzly?</p>
-                <ul>
-                    <li>1.-Salmon</li><!--Lista de opciones para respuesta-->
-                    <li>2.-Trucha</li>
-                    <li>3.-Atún</li>
-                </ul>
-                Respuesta: <input id="respuesta3" type="number" min="1" max="3" required="required" autofocus= "autofocus"><!--Lugar/caja para introducir el número seleccionado-->
-                <input type="submit" onclick="tercerPregunta ()" value="Enviar">
-            </form>
+      <div id="pedirNombre"> <!--Creacion del div para segmentar la primera parte de la trivia-->
+          Ingresa tu nombre:
+          <input type="text" id="nombre" placeholder= "Aquí tu nombre">
+          <input type="submit" name="pedirnombre" onclick = "putName()"><!--Agregando detalles de input-->
+      </div>
+      <div id="playNow"> <!--Creando el segundo segmento con descicion por botones-->
+          <h2>¿Quieres jugar?</h2>
+          <input type="button" value="Si" onclick="empezarJuego()">
+          <input type="submit" value="No" onclick="cancelarJuego()">
+      </div>
+      <form id="pregunta1">
+          <p>¿Qué comen los koalas?</p>
+        <label>
+          <input type="radio" name="option1" value="eucalipto"> Eucalipto
+        </label>
+        <label>
+          <input type="radio" name="option1" value="manzanilla"> Manzanilla
+        </label>
+        <label>
+          <input type="radio" name="option1" value="sabila"> Sábila
+        </label>
+        <br/>
+        <input type="submit" value="Enviar" onclick="pregunta1()">
+      </form>
+
+      <form id="pregunta2">
+          <p>¿Qué comen los pandas?</p>
+        <label>
+          <input type="radio" name="option2" value="caoba"> Caoba
+        </label>
+        <label>
+          <input type="radio" name="option2" value="bambu"> Bambú
+        </label>
+        <label>
+          <input type="radio" name="option2" value="cedro"> Cedro
+        </label>
+        <br/>
+        <input type="submit" value="Enviar" onclick="pregunta2()">
+      </form>
+
+      <form id="pregunta3">
+          <p>¿Qué comen el oso grizzly?</p>
+        <label>
+          <input type="radio" name="option3" value="salmon"> Salmón
+        </label>
+        <label>
+          <input type="radio" name="option3" value="trucha"> Trucha
+        </label>
+        <label>
+          <input type="radio" name="option3" value="atun"> Atún
+        </label>
+        <br/>
+        <input type="submit" value="Enviar" onclick="pregunta3()">
+      </form>
+      <div id="respuestas">
+        <h3>RESULTADOS</h3>
+          <div id="verCorrectas"></div><!-- Se visualizan las respuestas correctas -->
+          <div id="verIncorrectas"></div><!-- Nos permite visualizar las respuestas incorrectas -->
+      </div>
 
     </section>
-    
 
-
-
-
-
-
-
-    </section>
-
-        
-
-
-
-
-
-    <script src="js/app.js">
-        
-        </script>
+    <script src="js/app.js"></script>
 </body>
 </html>
