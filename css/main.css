@@ -1,0 +1,17 @@
+body{
+    font-style: italic;
+    background-color: aqua;
+}
+header{ /*Estilo del header*/
+    text-align: center;
+    font-size: 20px;
+}
+
+h1{
+    
+}
+hr{
+    border-style: double;
+    border-bottom-color: fuchsia;
+
+}
